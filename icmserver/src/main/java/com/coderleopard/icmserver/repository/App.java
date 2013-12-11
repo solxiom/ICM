@@ -1,7 +1,7 @@
 package com.coderleopard.icmserver.repository;
 
 import com.coderleopard.icmserver.config.SpringMongoConfig;
-import com.coderleopard.icmserver.domain.User;
+import com.coderleopard.icmserver.domain.TestUser;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -25,7 +25,7 @@ public class App {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig.class);
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 
-		User user = new User("mkyong", "password123");
+		TestUser user = new TestUser("Kavan", "password123");
 
 		// save
 		mongoOperation.save(user);
@@ -34,27 +34,27 @@ public class App {
 		System.out.println("1. user : " + user);
 
 		// query to search user
-		Query searchUserQuery = new Query(Criteria.where("username").is("mkyong"));
+		Query searchUserQuery = new Query(Criteria.where("username").is("Kavan"));
 
 		// find the saved user again.
-		User savedUser = mongoOperation.findOne(searchUserQuery, User.class);
+		TestUser savedUser = mongoOperation.findOne(searchUserQuery, TestUser.class);
 		System.out.println("2. find - savedUser : " + savedUser);
 
 		// update password
 		mongoOperation.updateFirst(searchUserQuery, Update.update("password", "new password"),
-				User.class);
+				TestUser.class);
 
 		// find the updated user object
-		User updatedUser = mongoOperation.findOne(
-				new Query(Criteria.where("username").is("mkyong")), User.class);
+		TestUser updatedUser = mongoOperation.findOne(
+				new Query(Criteria.where("username").is("Kavan")), TestUser.class);
 
 		System.out.println("3. updatedUser : " + updatedUser);
 
 		// delete
-		mongoOperation.remove(searchUserQuery, User.class);
+		mongoOperation.remove(searchUserQuery, TestUser.class);
 
 		// List, it should be empty now.
-		List<User> listUser = mongoOperation.findAll(User.class);
+		List<TestUser> listUser = mongoOperation.findAll(TestUser.class);
 		System.out.println("4. Number of user = " + listUser.size());
 
 	}
