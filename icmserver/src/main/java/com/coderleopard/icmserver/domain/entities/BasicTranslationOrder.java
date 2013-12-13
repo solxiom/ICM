@@ -17,26 +17,22 @@ import java.util.List;
  * @author kavan
  */
 public class BasicTranslationOrder implements Order {
-    
+
     private long id;
     private File document;
     private int words;
-    
     private Customer customer;
     private Interpreter interpreter;
     private String description;
-    private String responsibleName;
-    private String responsiblePhone;
     private OrderStatus orderStatus;
     private OrderType orderType;
-    private Feedback feedback;
     private List<String> languages;
-    private String interpreterGender;
     private List<Complaint> complaints;
     private List<Comment> comments;
     private JobType jobType;
     private TimeData timeData;
-    
+    private AdditionalOrderInfo additionalInfo;
+
     public long getId() {
         return id;
     }
@@ -53,15 +49,15 @@ public class BasicTranslationOrder implements Order {
         this.document = document;
     }
 
-    public int getWords(){
+    public int getWords() {
         return words;
     }
 
     public void setWords(int words) {
         this.words = words;
     }
-    
-    @Override
+
+     @Override
     public Customer getCustomer() {
         return customer;
     }
@@ -92,26 +88,6 @@ public class BasicTranslationOrder implements Order {
     }
 
     @Override
-    public String getResponsibleName() {
-        return responsibleName;
-    }
-
-    @Override
-    public void setResponsibleName(String responsibleName) {
-        this.responsibleName = responsibleName;
-    }
-
-    @Override
-    public String getResponsiblePhone() {
-        return responsiblePhone;
-    }
-
-    @Override
-    public void setResponsiblePhone(String responsiblePhone) {
-        this.responsiblePhone = responsiblePhone;
-    }
-
-    @Override
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }
@@ -131,15 +107,6 @@ public class BasicTranslationOrder implements Order {
         this.orderType = orderType;
     }
 
-    @Override
-    public Feedback getFeedback() {
-        return feedback;
-    }
-
-    @Override
-    public void setFeedback(Feedback feedback) {
-        this.feedback = feedback;
-    }
 
     @Override
     public List<String> getLanguages() {
@@ -152,14 +119,15 @@ public class BasicTranslationOrder implements Order {
     }
 
     @Override
-    public String getInterpreterGender() {
-        return interpreterGender;
+    public AdditionalOrderInfo getAdditionalInfo() {
+        return additionalInfo;
     }
 
     @Override
-    public void setInterpreterGender(String interpreterGender) {
-        this.interpreterGender = interpreterGender;
+    public void setAdditionalInfo(AdditionalOrderInfo additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
+    
 
     @Override
     public List<Complaint> getComplaints() {

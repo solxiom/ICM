@@ -16,26 +16,21 @@ import java.util.List;
  * @author kavan
  */
 public class BasicOnsiteOrder implements Order {
-    
+
     private long id;
     private Address orderAddress;
-
-
     private Customer customer;
     private Interpreter interpreter;
     private String description;
-    private String responsibleName;
-    private String responsiblePhone;
     private OrderStatus orderStatus;
     private OrderType orderType;
-    private Feedback feedback;
     private List<String> languages;
-    private String interpreterGender;
     private List<Complaint> complaints;
     private List<Comment> comments;
     private JobType jobType;
     private TimeData timeData;
-    
+    private AdditionalOrderInfo additionalInfo;
+
     public long getId() {
         return id;
     }
@@ -51,7 +46,7 @@ public class BasicOnsiteOrder implements Order {
     public void setOrderAddress(Address orderAddress) {
         this.orderAddress = orderAddress;
     }
-    
+
      @Override
     public Customer getCustomer() {
         return customer;
@@ -83,26 +78,6 @@ public class BasicOnsiteOrder implements Order {
     }
 
     @Override
-    public String getResponsibleName() {
-        return responsibleName;
-    }
-
-    @Override
-    public void setResponsibleName(String responsibleName) {
-        this.responsibleName = responsibleName;
-    }
-
-    @Override
-    public String getResponsiblePhone() {
-        return responsiblePhone;
-    }
-
-    @Override
-    public void setResponsiblePhone(String responsiblePhone) {
-        this.responsiblePhone = responsiblePhone;
-    }
-
-    @Override
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }
@@ -122,15 +97,6 @@ public class BasicOnsiteOrder implements Order {
         this.orderType = orderType;
     }
 
-    @Override
-    public Feedback getFeedback() {
-        return feedback;
-    }
-
-    @Override
-    public void setFeedback(Feedback feedback) {
-        this.feedback = feedback;
-    }
 
     @Override
     public List<String> getLanguages() {
@@ -143,14 +109,15 @@ public class BasicOnsiteOrder implements Order {
     }
 
     @Override
-    public String getInterpreterGender() {
-        return interpreterGender;
+    public AdditionalOrderInfo getAdditionalInfo() {
+        return additionalInfo;
     }
 
     @Override
-    public void setInterpreterGender(String interpreterGender) {
-        this.interpreterGender = interpreterGender;
+    public void setAdditionalInfo(AdditionalOrderInfo additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
+    
 
     @Override
     public List<Complaint> getComplaints() {
