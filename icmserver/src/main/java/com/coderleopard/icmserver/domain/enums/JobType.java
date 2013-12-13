@@ -10,5 +10,5 @@ package com.coderleopard.icmserver.domain.enums;
  */
 public enum JobType {
  
-    MANEGMENT, INTERPRETION;
+    MANEGMENT, TRANSLATION_ORDER, ONLINE_ORDER, ONSITE_ORDER;
 }

@@ -8,6 +8,9 @@ package com.coderleopard.icmserver.domain.enums;
  *
  * @author kavan
  */
+
 public enum ComplaintType {
-    CUSTOMER_COMPLAINT, ORDER_COMPLAINT, EMPLOYEE_COMPLAINT;
+
+    CUSTOMER_COMPLAINT, ONLINE_ORDER_COMPLAINT, TRANSLATION_ORDER_COMPLAINT,
+    ONSITE_ORDER_COMPLAINT, EMPLOYEE_COMPLAINT;
 }

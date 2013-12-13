@@ -9,5 +9,7 @@ package com.coderleopard.icmserver.domain.enums;
  * @author kavan
  */
 public enum CommentType {
-    ORDER_COMMENT, CUSTOMER_COMMENT,EMPLOYEE_COMMENT;
+
+    CUSTOMER_COMMENT, EMPLOYEE_COMMENT, ONLINE_ORDER_COMMENT,
+    ONSITE_ORDER_COMMENT, TRANSLATIONE_ORDER_COMMENTT;
 }
