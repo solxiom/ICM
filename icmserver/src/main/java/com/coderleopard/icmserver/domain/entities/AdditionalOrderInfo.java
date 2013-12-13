@@ -4,12 +4,17 @@
  */
 package com.coderleopard.icmserver.domain.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  *
  * @author kavan
  */
+@Document
 public class AdditionalOrderInfo {
 
+    @Id
     private long id;
     private Feedback feedback;
     private String interpreterGneder;
@@ -55,6 +60,4 @@ public class AdditionalOrderInfo {
     public void setResponsiblePhoneNumber(String responsiblePhoneNumber) {
         this.responsiblePhoneNumber = responsiblePhoneNumber;
     }
-    
-    
 }

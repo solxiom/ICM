@@ -11,13 +11,17 @@ import com.coderleopard.icmserver.domain.interfaces.Order;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author kavan
  */
+@Document
 public class BasicTranslationOrder implements Order {
 
+    @Id
     private long id;
     private File document;
     private int words;
@@ -57,7 +61,7 @@ public class BasicTranslationOrder implements Order {
         this.words = words;
     }
 
-     @Override
+    @Override
     public Customer getCustomer() {
         return customer;
     }
@@ -107,7 +111,6 @@ public class BasicTranslationOrder implements Order {
         this.orderType = orderType;
     }
 
-
     @Override
     public List<String> getLanguages() {
         return languages;
@@ -127,7 +130,6 @@ public class BasicTranslationOrder implements Order {
     public void setAdditionalInfo(AdditionalOrderInfo additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
-    
 
     @Override
     public List<Complaint> getComplaints() {
@@ -144,13 +146,8 @@ public class BasicTranslationOrder implements Order {
     }
 
     @Override
-    public JobType getJobType() {
-        return jobType;
-    }
-
-    @Override
     public String getCommentableId() {
-            return this.id + "";
+        return this.id + "";
     }
 
     @Override
@@ -178,15 +175,31 @@ public class BasicTranslationOrder implements Order {
 
     @Override
     public TimeData getTimeData() {
-        return this.timeData;
+        return timeData;
     }
 
-    public void setTimeData(TimeData td) {
-        this.timeData = td;
+    @Override
+    public void setTimeData(TimeData timeData) {
+        this.timeData = timeData;
+    }
+
+    @Override
+    public JobType getJobType() {
+        return jobType;
+    }
+
+    @Override
+    public void setJobType(JobType jobType) {
+        this.jobType = jobType;
     }
 
     @Override
     public String getJobDescription() {
-        return this.description;
+        return description;
+    }
+
+    @Override
+    public void setJobDescription(String jobDescription) {
+        this.description = jobDescription;
     }
 }
