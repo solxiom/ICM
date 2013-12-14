@@ -153,7 +153,7 @@ public class BasicTranslationOrder implements Order {
     @Override
     public void addComment(Comment comment) {
         if (this.comments == null) {
-            comments = new LinkedList();
+            comments = new LinkedList<>();
         }
         this.comments.add(comment);
     }
@@ -168,7 +168,7 @@ public class BasicTranslationOrder implements Order {
     public void addComplaint(Complaint complaint) {
         if (this.complaints == null) {
 
-            this.complaints = new LinkedList();
+            this.complaints = new LinkedList<>();
         }
         this.complaints.add(complaint);
     }

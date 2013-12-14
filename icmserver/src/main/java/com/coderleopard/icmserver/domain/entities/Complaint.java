@@ -82,7 +82,7 @@ public class Complaint implements Commentable {
     @Override
     public void addComment(Comment comment) {
         if (this.comments == null) {
-            this.comments = new LinkedList<Comment>();
+            this.comments = new LinkedList<>();
         }
         this.comments.add(comment);
     }

@@ -15,8 +15,14 @@ public interface JobEvent {
     
     public TimeData getTimeData();
     
+    public void setTimeData(TimeData timeData);
+    
     public JobType getJobType();
+    
+    public void setJobType(JobType jobType);
 
     public String getJobDescription();
+    
+    public void setJobDescription(String jobDescription);
     
 }
