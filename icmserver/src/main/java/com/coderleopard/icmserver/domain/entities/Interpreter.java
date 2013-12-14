@@ -9,11 +9,14 @@ import java.awt.Image;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author kavan
  */
+@Document
 public class Interpreter implements Employee {
 
     private double initialLevel;
@@ -22,6 +25,7 @@ public class Interpreter implements Employee {
     private double literaryLevel;
     private double generalLevel;
     //*****interface
+    @Id
     private String socialSecurityNumber;
     private String password;
     private String email;

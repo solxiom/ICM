@@ -9,14 +9,18 @@ import java.awt.Image;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author kavan
  */
+@Document
 public class Manager implements Employee {
     
     //****interface
+    @Id
     private String socialSecurityNumber;
     private String password;
     private String email;
