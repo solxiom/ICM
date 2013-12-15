@@ -7,7 +7,7 @@ package com.coderleopard.icmserver.domain.entities;
 import com.coderleopard.icmserver.domain.enums.CommentType;
 import com.coderleopard.icmserver.domain.interfaces.Commentable;
 import java.util.Date;
-import org.springframework.data.annotation.Id;
+import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -17,20 +17,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Comment{
     
-    @Id
-    private long id;
+   
+    private UUID uniqueCommentId;
     private Date created;
     private Date lastUpdate;
     private String text;
     private Commentable commentable;
     private CommentType commentType;
 
-    public long getId() {
-        return id;
+    public UUID getUniqueCommentId() {
+        return uniqueCommentId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUniqueCommentId(UUID uniqueCommentId) {
+        this.uniqueCommentId = uniqueCommentId;
     }
 
     public Date getCreated() {

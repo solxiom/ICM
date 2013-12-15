@@ -20,7 +20,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Manager implements Employee {
     
     //****interface
-    @Id
     private String socialSecurityNumber;
     private String password;
     private String email;

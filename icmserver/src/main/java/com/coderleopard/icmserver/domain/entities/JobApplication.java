@@ -5,10 +5,12 @@
 package com.coderleopard.icmserver.domain.entities;
 
 import com.coderleopard.icmserver.domain.enums.JobApplicationStatus;
+import com.coderleopard.icmserver.domain.interfaces.Commentable;
 import java.io.File;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
-import org.springframework.data.annotation.Id;
+import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -16,9 +18,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author kavan
  */
 @Document
-public class JobApplication {
-    @Id
-    private long id;
+public class JobApplication implements Commentable {
+
+    private UUID uniqueId;
     private Date created;
     private String workExperience;
     private List<String> languages;
@@ -27,13 +29,14 @@ public class JobApplication {
     private List<File> attachments;
     private JobInterview interview;
     private JobApplicationStatus applicationStatus;
+    private List<Comment> comments;
 
-    public long getId() {
-        return id;
+    public UUID getUniqueId() {
+        return uniqueId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUniqueId(UUID uniqueId) {
+        this.uniqueId = uniqueId;
     }
 
     public Date getCreated() {
@@ -98,6 +101,25 @@ public class JobApplication {
 
     public void setApplicationStatus(JobApplicationStatus applicationStatus) {
         this.applicationStatus = applicationStatus;
+    }
+
+    @Override
+    public String getCommentableId() {
+        return this.uniqueId + "";
+    }
+
+    @Override
+    public List<Comment> getComments() {
+        return this.comments;
+    }
+
+    @Override
+    public void addComment(Comment comment) {
+        if(this.comments == null){
+            this.comments = new LinkedList<>();
+        }
+        this.comments.add(comment);
+        
     }
     
     

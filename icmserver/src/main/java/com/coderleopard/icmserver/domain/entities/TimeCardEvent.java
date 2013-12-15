@@ -6,7 +6,7 @@ package com.coderleopard.icmserver.domain.entities;
 
 import com.coderleopard.icmserver.domain.enums.TimeCardEventStatus;
 import com.coderleopard.icmserver.domain.interfaces.JobEvent;
-import org.springframework.data.annotation.Id;
+import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -15,19 +15,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class TimeCardEvent {
-    @Id
-    private long id;
+
+    private UUID uniqueId;
     private JobEvent jobEvent;
     private TimeCardEventStatus eventStatus;
 
-    public long getId() {
-        return id;
+    public UUID getUniqueId() {
+        return uniqueId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUniqueId(UUID uniqueId) {
+        this.uniqueId = uniqueId;
     }
-
+  
     public JobEvent getJobEvent() {
         return jobEvent;
     }

@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class Organisation {
-    @Id
+    
     private String buisinissIdentityCode;
     private String name;
     private Address billingAddress;

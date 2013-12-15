@@ -10,7 +10,7 @@ import com.coderleopard.icmserver.domain.interfaces.Commentable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import org.springframework.data.annotation.Id;
+import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -20,22 +20,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Complaint implements Commentable {
 
-    @Id
-    private long id;
+
+    private UUID uniqueComplaintNumber;    
     private Date created;
     private Date closed;
     private ComplaintType complaintType;
     private ComplaintStatus complaintStatus;
     private List<Comment> comments;
 
-    public long getId() {
-        return id;
+    public UUID getUniqueComplaintNumber() {
+        return uniqueComplaintNumber;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUniqueComplaintNumber(UUID uniqueComplaintNumber) {
+        this.uniqueComplaintNumber = uniqueComplaintNumber;
     }
-
+ 
     public Date getCreated() {
         return created;
     }
@@ -70,7 +70,7 @@ public class Complaint implements Commentable {
 
     @Override
     public String getCommentableId() {
-        return this.id + "";
+        return this.uniqueComplaintNumber + "";
     }
 
     @Override

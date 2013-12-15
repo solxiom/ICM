@@ -6,16 +6,16 @@ package com.coderleopard.icmserver.domain.entities;
 
 import com.coderleopard.icmserver.domain.interfaces.Person;
 import java.awt.Image;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author kavan
  */
+@Document
 public class Applicant implements Person {
    
      //****interface
-    @Id
     private String socialSecurityNumber;
     private String password;
     private String email;

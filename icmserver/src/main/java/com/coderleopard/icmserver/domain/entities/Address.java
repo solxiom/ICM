@@ -4,7 +4,9 @@
  */
 package com.coderleopard.icmserver.domain.entities;
 
-import org.springframework.data.annotation.Id;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -14,19 +16,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Address {
     
-    @Id
-    private long id;
+
     private String street;
     private String city;
     private int postalCode;
+    private List<String> naibs;
 
-    public long getId() {
-        return id;
+
+
+    public List<String> getNaibs() {
+        return naibs;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void addNaibs(String naib) {
+        if(this.naibs == null){
+            this.naibs = new LinkedList<>();
+        }
+        this.naibs.add(naib);
     }
+    
+    
 
     public String getStreet() {
         return street;
@@ -51,6 +60,10 @@ public class Address {
     public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Address{street=" + street + ", city=" + city + ", postalCode=" + postalCode + ", naibs=" + naibs + "}";
+    }    
     
 }

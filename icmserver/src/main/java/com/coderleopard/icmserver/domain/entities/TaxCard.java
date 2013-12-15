@@ -17,22 +17,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class TaxCard {
     
-    @Id
-    private long cardId;
+    
+    private String cardId;
     private Image scannedDocument;
     private Date validUntil;
     private double overTheBasicRate;
     private double basicRate;
     private double basicRateCeiling;
 
-    public long getCardId() {
+    public String getCardId() {
         return cardId;
     }
 
-    public void setCardId(long cardId) {
+    public void setCardId(String cardId) {
         this.cardId = cardId;
     }
-
+    
     public Image getScannedDocument() {
         return scannedDocument;
     }

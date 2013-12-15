@@ -14,9 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class TimeData {
-    
-    @Id
-    private long id;
+
     private int startTime;
     private int endTime;
     private int actualStartTime;
@@ -24,15 +22,7 @@ public class TimeData {
     private Date startDate;
     private Date endDate;
     private int duration;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    
     public int getStartTime() {
         return startTime;
     }

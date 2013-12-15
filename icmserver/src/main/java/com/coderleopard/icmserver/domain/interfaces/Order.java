@@ -10,6 +10,7 @@ import com.coderleopard.icmserver.domain.entities.Interpreter;
 import com.coderleopard.icmserver.domain.enums.OrderStatus;
 import com.coderleopard.icmserver.domain.enums.OrderType;
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -17,6 +18,10 @@ import java.util.List;
  */
 public interface Order extends Commentable, Complainable, JobEvent {
 
+    public UUID getUniqueOrderId();
+    
+    public void setUniqueOrderId(UUID uuid);
+    
     public Customer getCustomer();
 
     public void setCustomer(Customer customer);

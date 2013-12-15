@@ -14,20 +14,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class AdditionalOrderInfo {
 
-    @Id
-    private long id;
+  
     private Feedback feedback;
     private String interpreterGneder;
     private String responsibleName;
     private String responsiblePhoneNumber;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public Feedback getFeedback() {
         return feedback;

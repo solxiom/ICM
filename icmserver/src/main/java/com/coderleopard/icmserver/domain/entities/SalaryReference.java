@@ -16,8 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class SalaryReference implements TimeMoneyRelationReference {
 
-    @Id
-    private long id;
+  
     private String name;
     private Date created;
     private Date dateValid;
@@ -29,13 +28,7 @@ public class SalaryReference implements TimeMoneyRelationReference {
     private double holidayHour;
     private double holidayMinimum;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+  
 
     public String getName() {
         return name;

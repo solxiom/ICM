@@ -1,0 +1,59 @@
+/* 
+    Document   : development_style
+    Created on : Dec 15, 2013, 10:34:06 PM
+    Author     : kavan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+html body{
+    height: 100%;
+    width:100%;
+    overflow-x: hidden;
+}
+body{
+    margin:60px auto;
+    color:black;
+}
+header{
+    position: absolute;
+    top:0;
+    height:60px;
+    width: 100%;
+    background-color: black;
+    color: white;
+   
+}
+header div{
+    width: 80%;
+    height:50px;
+    background-color: aqua;
+    color:red;
+ 
+}
+footer{
+ 
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    
+}
+footer img{
+    width: 150px;
+    height: 150px;
+    float:right;
+    margin-right: 100px;
+}
+#colored_bottom{
+    margin-top:100px;
+    height:100px;
+    background-color: #999966;
+    /*background-color: #336666; good one also*/
+    width:100%;
+    border-top: solid 5px;
+    border-color: #787878 ;
+    
+}

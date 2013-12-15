@@ -6,7 +6,7 @@ package com.coderleopard.icmserver.domain.entities;
 
 import com.coderleopard.icmserver.domain.enums.JobType;
 import com.coderleopard.icmserver.domain.interfaces.JobEvent;
-import org.springframework.data.annotation.Id;
+import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -16,20 +16,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Consideration implements JobEvent {
 
-    @Id
-    private long id;
+
+    private UUID considerationNumber;
     private String decisionText;
     private String decisionJustification;
     private TimeData timeData;
     private JobType jobType;
     private String jobDescription;
 
-    public long getId() {
-        return id;
+    public UUID getConsiderationNumber() {
+        return considerationNumber;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setConsiderationNumber(UUID considerationNumber) {
+        this.considerationNumber = considerationNumber;
     }
 
     public String getDecisionText() {

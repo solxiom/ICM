@@ -10,6 +10,7 @@ import com.coderleopard.icmserver.domain.enums.OrderType;
 import com.coderleopard.icmserver.domain.interfaces.Order;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,8 +21,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class BasicOnsiteOrder implements Order {
 
-    @Id
-    private long id;
+  
+    private UUID uniqueOrderId;
     private Address orderAddress;
     private Customer customer;
     private Interpreter interpreter;
@@ -35,14 +36,18 @@ public class BasicOnsiteOrder implements Order {
     private TimeData timeData;
     private AdditionalOrderInfo additionalInfo;
 
-    public long getId() {
-        return id;
+    @Override
+    public UUID getUniqueOrderId() {
+        return uniqueOrderId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    @Override
+    public void setUniqueOrderId(UUID uniqueOrderId) {
+        this.uniqueOrderId = uniqueOrderId;
     }
 
+
+    
     public Address getOrderAddress() {
         return orderAddress;
     }
@@ -137,7 +142,7 @@ public class BasicOnsiteOrder implements Order {
 
     @Override
     public String getCommentableId() {
-        return this.id + "";
+        return this.uniqueOrderId + "";
     }
 
     @Override
@@ -151,7 +156,7 @@ public class BasicOnsiteOrder implements Order {
     @Override
     public String getComplainableId() {
 
-        return this.id + "";
+        return this.uniqueOrderId + "";
     }
 
     @Override

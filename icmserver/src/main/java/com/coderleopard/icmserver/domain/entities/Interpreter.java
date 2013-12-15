@@ -25,7 +25,6 @@ public class Interpreter implements Employee {
     private double literaryLevel;
     private double generalLevel;
     //*****interface
-    @Id
     private String socialSecurityNumber;
     private String password;
     private String email;

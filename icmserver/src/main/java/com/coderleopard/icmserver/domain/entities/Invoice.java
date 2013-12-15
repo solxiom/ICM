@@ -15,8 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class Invoice {
-    @Id
-    private long id;
+ 
     private Date created;
     private Date dueDate;
     private String description;
@@ -26,14 +25,7 @@ public class Invoice {
     private PriceReference priceReference;
     private InvoiceStatus invoiceStatus;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+   
     public PriceReference getPriceReference() {
         return priceReference;
     }
