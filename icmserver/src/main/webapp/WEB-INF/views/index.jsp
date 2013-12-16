@@ -13,10 +13,15 @@
         <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/development_style.css">
     </head>
     <body>
-        <header> <di><h1>ICM development </h1></di></header>
-        <p>Main ajhdkjshdjalkh </p>
+        <header> <div id="header_title">ICM <span>development</span> </div></header>
+        <div id="main">
+            
+            <p>And God said, let there be code... </p>
+        </div>
+        
         <footer>
-            <img src="<%=request.getContextPath()%>/resources/img/coder_leopard.gif" />
+            <div id="logo_div"><img src="<%=request.getContextPath()%>/resources/img/coder_leopard.gif" /></div>
+            
             <div id="colored_bottom"></div>
         </footer>
     </body>
