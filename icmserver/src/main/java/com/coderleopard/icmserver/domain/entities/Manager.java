@@ -9,7 +9,6 @@ import java.awt.Image;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -20,6 +19,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Manager implements Employee {
     
     //****interface
+    private String name;
+    private String lastName;
     private String socialSecurityNumber;
     private String password;
     private String email;
@@ -32,6 +33,26 @@ public class Manager implements Employee {
     private TaxCard taxCard;
     private SalaryReference salaryReference;
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
     @Override
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;

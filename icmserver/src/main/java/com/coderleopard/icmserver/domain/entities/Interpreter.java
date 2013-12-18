@@ -25,6 +25,8 @@ public class Interpreter implements Employee {
     private double literaryLevel;
     private double generalLevel;
     //*****interface
+    private String name;
+    private String lastName;
     private String socialSecurityNumber;
     private String password;
     private String email;
@@ -36,6 +38,26 @@ public class Interpreter implements Employee {
     private List<TimeCardEvent> timeCardEvents;
     private TaxCard taxCard;
     private SalaryReference salaryReference;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public double getInitialLevel() {
         return initialLevel;

@@ -15,13 +15,37 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Customer implements Person {
 
+    private String name;
+    private String lastName;
     private String socialSecurityNumber;
     private String password;
     private String email;
     private String about;
     private Image picture;
     private Address address;
+    private Organisation organisation;
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    
     @Override
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;
@@ -82,4 +106,12 @@ public class Customer implements Person {
         this.address = address;
     }
 
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
+    }
+    
 }

@@ -13,6 +13,14 @@ import java.awt.Image;
  */
 public interface Person {
 
+    public String getName();
+
+    public void setName(String name);
+
+    public String getLastName();
+
+    public void setLastName(String name);
+
     public String getSocialSecurityNumber();
 
     public void setSocialSecurityNumber(String socialSecurity);
@@ -30,7 +38,7 @@ public interface Person {
     public void setAbout(String about);
 
     public Image getPicture();
-    
+
     public void setPicture(Image picture);
 
     public Address getAddress();
