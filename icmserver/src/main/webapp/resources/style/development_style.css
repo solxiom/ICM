@@ -29,10 +29,14 @@ header{
     border-color:#787878 ;
    
 }
+header div, #main, footer #logo_div{
+    max-width: 1200px;
+    min-width: 600px;
+    width: 80%;
+}
 header div{
-    
+   
     margin: 0 auto;
-    width: 1200px;
     
 }
 #header_title{
@@ -52,7 +56,7 @@ footer{
 }
 footer #logo_div{
     margin: 0 auto;
-    width: 1200px;
+   
 }
 footer img{
     width: 150px;
@@ -70,6 +74,5 @@ footer img{
 }
 #main{    
     margin:0 auto;
-    height:100%;
-    width:1200px;    
+    height:100%;   
 }
