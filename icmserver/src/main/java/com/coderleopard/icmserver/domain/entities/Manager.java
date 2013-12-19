@@ -24,6 +24,7 @@ public class Manager implements Employee {
     private String socialSecurityNumber;
     private String password;
     private String email;
+    private String phone;
     private String about;
     private Image picture;
     private Address address;
@@ -81,6 +82,16 @@ public class Manager implements Employee {
     @Override
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String getPhone() {
+        return phone;
+    }
+
+    @Override
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override

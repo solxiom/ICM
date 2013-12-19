@@ -21,6 +21,7 @@ public class Applicant implements Person {
     private String lastName;
     private String socialSecurityNumber;
     private String password;
+    private String phone;
     private String email;
     private String about;
     private Image picture;
@@ -77,6 +78,16 @@ public class Applicant implements Person {
         this.email = email;
     }
 
+    @Override
+    public String getPhone() {
+        return phone;
+    }
+
+    @Override
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
     @Override
     public String getAbout() {
         return about;

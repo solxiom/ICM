@@ -28,6 +28,10 @@ public interface Person {
     public String getPassword();
 
     public void setPassword(String password);
+    
+    public String getPhone();
+    
+    public void setPhone(String phone);
 
     public String getEmail();
 

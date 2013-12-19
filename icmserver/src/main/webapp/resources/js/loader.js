@@ -8,15 +8,25 @@ var resources_root = window.location.pathname + "/resources/";
 var head_meta_path = resources_root + "js/json/head_meta.json";
 
 $("document").ready(function() {
-    getMetaDataAndLoad();
+    $("#main").css('visibility', 'hidden');
+    setTimeout(1000,getMetaDataAndLoad());//better ui experience
     attachHeader();
     attachFooter();
+    
 });
 function getMetaDataAndLoad() {
-    $.getJSON(head_meta_path, function(data) {
-        loadstyles(data.styles);
-        loadFavicon(data.favicon);
-        loadScripts(data.scripts);
+    $.ajax({
+        async: "false",
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        url: head_meta_path,
+        success: function(data) {
+            loadstyles(data.styles);
+            loadFavicon(data.favicon);
+            loadScripts(data.scripts);
+            $("#main").css('visibility', 'visible');
+        }
     });
 }
 function loadScripts(scripts) {

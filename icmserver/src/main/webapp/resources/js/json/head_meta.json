@@ -3,7 +3,12 @@
         {
             "local": "true",
             "path": "style/",
-            "file": "development_style.css"
+            "file": "standard_style.css"
+        },
+        {
+            "local": "true",
+            "path": "style/",
+            "file": "registration_style.css"
         }],
     "scripts": [
         {

@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author kavan
  */
 @Document
-public class Organisation {
+public class Organization {
     
     private String buisinissIdentityCode;
     private String name;

@@ -20,10 +20,12 @@ public class Customer implements Person {
     private String socialSecurityNumber;
     private String password;
     private String email;
+    private String phone;
     private String about;
     private Image picture;
     private Address address;
-    private Organisation organisation;
+    private Organization organization;
+    private String jobTitle;
 
     @Override
     public String getName() {
@@ -77,6 +79,16 @@ public class Customer implements Person {
     }
 
     @Override
+    public String getPhone() {
+        return phone;
+    }
+
+    @Override
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    @Override
     public String getAbout() {
         return about;
     }
@@ -106,12 +118,21 @@ public class Customer implements Person {
         this.address = address;
     }
 
-    public Organisation getOrganisation() {
-        return organisation;
+    public Organization getOrganization() {
+        return organization;
     }
 
-    public void setOrganisation(Organisation organisation) {
-        this.organisation = organisation;
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+    
     
 }
