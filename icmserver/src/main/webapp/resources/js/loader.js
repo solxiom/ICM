@@ -4,17 +4,23 @@
  */
 "use strict";
 
-var resources_root = window.location.pathname + "/resources/";
-var head_meta_path = resources_root + "js/json/head_meta.json";
-
 $("document").ready(function() {
     $("#main").css('visibility', 'hidden');
-    setTimeout(1000,getMetaDataAndLoad());//better ui experience
+    setTimeout(1000, getMetaDataAndLoad());//better ui experience
     attachHeader();
     attachFooter();
-    
+
 });
+function getRootPath() {
+    var root_path = window.location.pathname;
+    var arr = root_path.split("/");
+    return arr[1];
+}
+function getResourcesRoot() {
+    return window.location.protocol + "//" + window.location.host + "/" + getRootPath() + "/resources/";
+}
 function getMetaDataAndLoad() {
+    var head_meta_path = getResourcesRoot() + "js/json/head_meta.json";
     $.ajax({
         async: "false",
         type: "GET",
@@ -64,15 +70,17 @@ function attachFooter() {
 function fileExists(element_type, attr_name, filename) {
     var b = false;
     $(element_type).each(function() {
-        var arr = $(this).attr(attr_name).split("/");
-        if (arr[arr.length - 1] === filename) {
-            b = true;
+        if (this !== undefined && $(this).attr(attr_name) !== undefined) {
+            var arr = $(this).attr(attr_name).split("/");
+            if (arr[arr.length - 1] === filename) {
+                b = true;
+            }
         }
     });
     return b;
 }
-function buildPath(meta) {
-    var path = resources_root + meta.path + meta.file;
+function buildPath(meta) {   
+    var path = getResourcesRoot() + meta.path + meta.file;
     if (meta.local === "false") {
         path = meta.path + meta.file;
     }

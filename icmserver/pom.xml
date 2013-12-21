@@ -20,6 +20,7 @@
         <slf4j_simple.version>1.7.5</slf4j_simple.version>
         <junit.version>4.11</junit.version>
         <jackson_mapper_asl.version>1.9.13</jackson_mapper_asl.version>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
     </properties>
 
     <dependencies>

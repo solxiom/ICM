@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/style/standard_style.css" type="text/css">
         <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/style/lib/qunit-1.12.0.css" type="text/css">
 
-        <title>JSP Page</title>
+        <title>Unit testing</title>
     </head>
     <body style="margin-top:35px">
 
