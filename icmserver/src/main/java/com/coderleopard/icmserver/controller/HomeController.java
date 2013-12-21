@@ -23,6 +23,10 @@ public class HomeController {
 	public ModelAndView test(HttpServletResponse response) throws IOException{
 		return new ModelAndView("index");
 	}
+        @RequestMapping(value="/test")
+	public ModelAndView qunit(HttpServletResponse response) throws IOException{
+		return new ModelAndView("test");
+	}
         
 	@RequestMapping(value="/user")
 	public @ResponseBody TestUser test2(HttpServletResponse response) throws IOException{
